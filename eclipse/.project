@@ -37,19 +37,9 @@
 			<locationURI>WORKSPACE_LOC/WoodCraft/environment.properties</locationURI>
 		</link>
 		<link>
-			<name>private.properties</name>
-			<type>1</type>
-			<locationURI>WORKSPACE_LOC/WoodCraft/private.properties</locationURI>
-		</link>
-		<link>
 			<name>resources</name>
 			<type>2</type>
 			<locationURI>WORKSPACE_LOC/WoodCraft/resources</locationURI>
-		</link>
-		<link>
-			<name>version.xml</name>
-			<type>1</type>
-			<locationURI>WORKSPACE_LOC/WoodCraft/version.xml</locationURI>
 		</link>
 	</linkedResources>
 	<filteredResources>
