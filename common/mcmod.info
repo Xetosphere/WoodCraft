@@ -1,0 +1,20 @@
+[
+{
+  "modid": "WC",
+  "name": "Wood Craft",
+  "description": "The Wood Craft mod.",
+  "version": "0.0.1",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Xetosphere"
+  ],
+  "credits": "By Xetosphere.",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
