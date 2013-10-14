@@ -1,0 +1,20 @@
+
+container.woodCutter=Wood Cutter
+
+item.stick.name=Oak Stick
+item.wc:stickSpruce.name=Spruce Stick
+item.wc:stickBirch.name=Birch Stick
+item.wc:stickJungle.name=Jungle Stick
+item.wc:plankOak.name=Oak Plank
+item.wc:plankSpruce.name=Spruce Plank
+item.wc:plankBirch.name=Birch Plank
+item.wc:plankJungle.name=Jungle Plank
+
+tile.fence.name=Oak Fence
+tile.fenceGate.name=Oak Fence Gate
+tile.wc:fenceSpruce.name=Spruce Fence
+tile.wc:fenceBirch.name=Birch Fence
+tile.wc:fenceJungle.name=Jungle Fence
+tile.wc:fenceGateSpruce.name=Spruce Fence Gate
+tile.wc:fenceGateBirch.name=Birch Fence Gate
+tile.wc:fenceGateJungle.name=Jungle Fence Gate
