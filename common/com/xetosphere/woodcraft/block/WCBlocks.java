@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.xetosphere.woodcraft.item.WCItems;
 import com.xetosphere.woodcraft.lib.BlockIDs;
@@ -62,10 +63,30 @@ public class WCBlocks {
 		GameRegistry.addRecipe(new ItemStack(WCBlocks.fenceGateBirch), new Object[] { "xyx", "xyx", Character.valueOf('x'), new ItemStack(WCItems.stick, 1, 1), Character.valueOf('y'), new ItemStack(Block.planks, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(WCBlocks.fenceGateJungle), new Object[] { "xyx", "xyx", Character.valueOf('x'), new ItemStack(WCItems.stick, 1, 2), Character.valueOf('y'), new ItemStack(Block.planks, 1, 3) });
 
+		for (int i = 0; i < 3; i++) {
+			GameRegistry.addRecipe(new ItemStack(Block.rail, 16), new Object[] { "i i", "isi", "i i", Character.valueOf('i'), Item.ingotIron, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Block.railActivator, 6), new Object[] { "isi", "iri", "isi", Character.valueOf('i'), Item.ingotIron, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('r'), Block.torchRedstoneActive });
+			GameRegistry.addRecipe(new ItemStack(Block.railPowered, 6), new Object[] { "i i", "isi", "iri", Character.valueOf('i'), Item.ingotGold, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('r'), Item.redstone });
+			GameRegistry.addRecipe(new ItemStack(Block.torchRedstoneActive), new Object[] { "c", "s", Character.valueOf('c'), Item.redstone, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Block.lever), new Object[] { "s", "b", Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('b'), Block.cobblestone });
+			GameRegistry.addRecipe(new ItemStack(Block.torchWood, 4), new Object[] { "c", "s", Character.valueOf('c'), new ItemStack(Item.coal, 1, 0), Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Block.torchWood, 4), new Object[] { "c", "s", Character.valueOf('c'), new ItemStack(Item.coal, 1, 1), Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Block.tripWireSource, 2), new Object[] { "i", "s", "p", Character.valueOf('p'), new ItemStack(Block.planks, 1, i), Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('i'), Item.ingotIron });
+			GameRegistry.addRecipe(new ItemStack(Item.arrow, 4), new Object[] { "f", "s", "e", Character.valueOf('e'), Item.feather, Character.valueOf('f'), Item.flint, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Item.itemFrame), new Object[] { "sss", "sws", "sss", Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('w'), Item.leather });
+			GameRegistry.addRecipe(new ItemStack(Item.painting), new Object[] { "sss", "sws", "sss", Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('w'), new ItemStack(Block.cloth, 1, OreDictionary.WILDCARD_VALUE) });
+			GameRegistry.addRecipe(new ItemStack(Item.fishingRod), new Object[] { "  s", " sl", "s l", Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('l'), Item.silk });
+			GameRegistry.addRecipe(new ItemStack(Item.sign, 3), new Object[] { "www", "www", " s ", Character.valueOf('w'), new ItemStack(Block.planks, 1, i), Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Block.ladder, 3), new Object[] { "s s", "sss", "s s", Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
+			GameRegistry.addRecipe(new ItemStack(Item.bow), new Object[] { " ws", "w s", " ws", Character.valueOf('w'), new ItemStack(WCItems.stick, 1, i), Character.valueOf('s'), Item.silk });
+		}
+
 		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 0), new Object[] { "xx", "xx", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 0) });
 		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 1), new Object[] { "xx", "xx", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 1) });
 		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 2), new Object[] { "xx", "xx", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 3), new Object[] { "xx", "xx", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 3) });
+
+		GameRegistry.addRecipe(new ItemStack(WCBlocks.woodCutter), new Object[] { "WIW", "WRW", "WWW", Character.valueOf('W'), Block.planks, Character.valueOf('I'), Item.ingotIron, Character.valueOf('R'), Item.redstone });
 	}
 
 	private static void getRidOfRecipes() {

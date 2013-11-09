@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.xetosphere.woodcraft.item.WCItems;
-
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.xetosphere.woodcraft.item.WCItems;
 
 public class WoodCutterRecipes {
 
@@ -25,16 +24,11 @@ public class WoodCutterRecipes {
 	}
 
 	private WoodCutterRecipes() {
-
-		addCutting(Block.planks.blockID, 0, new ItemStack(Item.stick, 6));
-		addCutting(Block.planks.blockID, 1, new ItemStack(WCItems.stick, 6, 0));
-		addCutting(Block.planks.blockID, 2, new ItemStack(WCItems.stick, 6, 1));
-		addCutting(Block.planks.blockID, 3, new ItemStack(WCItems.stick, 6, 2));
 		
-		addCutting(Block.wood.blockID, 0, new ItemStack(WCItems.plank, 10, 0));
-		addCutting(Block.wood.blockID, 1, new ItemStack(WCItems.plank, 10, 1));
-		addCutting(Block.wood.blockID, 2, new ItemStack(WCItems.plank, 10, 2));
-		addCutting(Block.wood.blockID, 3, new ItemStack(WCItems.plank, 10, 3));
+		addCutting(Block.wood.blockID, 0, new ItemStack(WCItems.plank, 16, 0));
+		addCutting(Block.wood.blockID, 1, new ItemStack(WCItems.plank, 16, 1));
+		addCutting(Block.wood.blockID, 2, new ItemStack(WCItems.plank, 16, 2));
+		addCutting(Block.wood.blockID, 3, new ItemStack(WCItems.plank, 16, 3));
 	}
 
 	@SuppressWarnings("unchecked")

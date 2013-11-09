@@ -34,10 +34,10 @@ public class WCItems {
 		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 4, 1), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(Block.planks, 1, 2) });
 		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 4, 2), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(Block.planks, 1, 3) });
 		
-		GameRegistry.addRecipe(new ItemStack(Item.stick, 4), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 0) });
-		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 4, 0), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 1) });
-		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 4, 1), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 2) });
-		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 4, 2), new Object[] { "x", "x", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 3) });
+		GameRegistry.addRecipe(new ItemStack(Item.stick, 6), new Object[] { "  x", " x ", "x  ", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 0) });
+		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 6, 0), new Object[] { "  x", " x ", "x  ", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 1) });
+		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 6, 1), new Object[] { "  x", " x ", "x  ", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 2) });
+		GameRegistry.addRecipe(new ItemStack(WCItems.stick, 6, 2), new Object[] { "  x", " x ", "x  ", Character.valueOf('x'), new ItemStack(WCItems.plank, 1, 3) });
 
 		for (int i = 0; i < ItemStick.STICK_NAMES.length; i++) {
 			GameRegistry.addRecipe(new ItemStack(Item.swordWood), new Object[] { "x", "x", "s", Character.valueOf('x'), Block.planks, Character.valueOf('s'), new ItemStack(WCItems.stick, 1, i) });
