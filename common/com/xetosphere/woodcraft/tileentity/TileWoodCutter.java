@@ -3,6 +3,7 @@ package com.xetosphere.woodcraft.tileentity;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemHoe;
@@ -19,7 +20,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileWoodCutter extends TileWC implements IInventory {
+public class TileWoodCutter extends TileWC implements IInventory, ISidedInventory {
 
 	private ItemStack[] inventory;
 
@@ -142,11 +143,6 @@ public class TileWoodCutter extends TileWC implements IInventory {
 	public boolean isInvNameLocalized() {
 
 		return this.hasCustomName();
-	}
-
-	public boolean isItemValidForSlot(int i, ItemStack itemStack) {
-
-		return true;
 	}
 
 	public String toString() {
@@ -329,6 +325,32 @@ public class TileWoodCutter extends TileWC implements IInventory {
 	public static boolean isItemFuel(ItemStack itemStack) {
 
 		return getItemBurnTime(itemStack) > 0;
+	}
+
+	public boolean isItemValidForSlot(int slot, ItemStack itemStack) {
+
+		return slot == 2 ? false : (slot == 1 ? isItemFuel(itemStack) : true);
+	}
+
+	public int[] getAccessibleSlotsFromSide(int side) {
+
+		final int[] output = { 2, 1 };
+		final int[] input = { 0 };
+		final int[] fuel = { 1 };
+		
+		return side == 0 ? output : (side == 1 ? input : fuel);
+	}
+
+	@Override
+	public boolean canInsertItem(int side, ItemStack itemstack, int slot) {
+
+		return this.isItemValidForSlot(side, itemstack);
+	}
+
+	@Override
+	public boolean canExtractItem(int side, ItemStack itemstack, int slot) {
+
+		return side == 2;
 	}
 
 }

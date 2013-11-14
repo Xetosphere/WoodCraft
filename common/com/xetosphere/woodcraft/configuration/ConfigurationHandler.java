@@ -34,6 +34,8 @@ public class ConfigurationHandler {
 
 			ItemIDs.STICK = config.getItem(Configuration.CATEGORY_ITEM, Strings.STICK_NAME, ItemIDs.STICK_DEFAULT).getInt(ItemIDs.STICK_DEFAULT);
 			ItemIDs.PLANK = config.getItem(Configuration.CATEGORY_ITEM, Strings.PLANK_NAME, ItemIDs.PLANK_DEFAULT).getInt(ItemIDs.PLANK_DEFAULT);
+			
+			ConfigurationSettings.rule = config.get(Configuration.CATEGORY_GENERAL, Strings.RULE, false).getBoolean(ConfigurationSettings.DEFAULT_RULE);
 
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, Reference.MOD_ID + " had a problem loading its configuration file.");

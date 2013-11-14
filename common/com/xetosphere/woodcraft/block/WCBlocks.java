@@ -10,6 +10,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.xetosphere.woodcraft.configuration.ConfigurationSettings;
 import com.xetosphere.woodcraft.item.WCItems;
 import com.xetosphere.woodcraft.lib.BlockIDs;
 import com.xetosphere.woodcraft.lib.Strings;
@@ -92,6 +93,20 @@ public class WCBlocks {
 	private static void getRidOfRecipes() {
 
 		removeRecipes(new ItemStack(Block.fenceGate));
+
+		boolean keepVanillaPlankRecipe = ConfigurationSettings.rule;
+
+		if (keepVanillaPlankRecipe != true) {
+
+			for (int i = 0; i <= 3; i++) {
+				removeRecipes(new ItemStack(Block.planks, 1, i));
+			}
+
+			GameRegistry.addShapelessRecipe(new ItemStack(WCItems.plank, 4, 0), new ItemStack(Block.wood, 1, 0));
+			GameRegistry.addShapelessRecipe(new ItemStack(WCItems.plank, 4, 1), new ItemStack(Block.wood, 1, 1));
+			GameRegistry.addShapelessRecipe(new ItemStack(WCItems.plank, 4, 2), new ItemStack(Block.wood, 1, 2));
+			GameRegistry.addShapelessRecipe(new ItemStack(WCItems.plank, 4, 3), new ItemStack(Block.wood, 1, 3));
+		}
 	}
 
 	private static void removeRecipes(ItemStack resultItem) {
